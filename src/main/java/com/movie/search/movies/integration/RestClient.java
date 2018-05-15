@@ -6,7 +6,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class RestClient {
 	
-	public Object call(String url, Class clazz, String...queryParameters) {
+	public Object get(String url, Class clazz, String...queryParameters) {
 		RestTemplate restTemplate = new RestTemplate();
 		return restTemplate.getForObject(url, clazz, queryParameters);
 	}
