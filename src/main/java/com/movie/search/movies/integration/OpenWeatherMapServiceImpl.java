@@ -19,7 +19,7 @@ public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
 	public WeatherResponse searchByCityAndCountry(String city, String country) {
 		String url = applicationConfig.getOpenWeatherMapBaseUrl() + "/weather?q={city},{country}&appid={key}&units=metric";
 		String key = applicationConfig.getOpenWeatherMapApiKey();
-		return (WeatherResponse) restClient.get(url, WeatherResponse.class, city, country, key);
+		return restClient.get(url, WeatherResponse.class, city, country, key);
 	}
 
 }
