@@ -6,18 +6,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.jayway.restassured.http.ContentType;
 import com.movie.search.movies.service.ApplicationConfig;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@DirtiesContext
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class MoviesApplicationTests {
 	
-	public static final String URL = "http://localhost:8181/api/movie?city=Campinas&country=br";
+	public static final String URL = "http://localhost:%s/api/movie?city=Campinas&country=br";
+	
+	@LocalServerPort
+	private int port;
 	
 	@Autowired
 	private ApplicationConfig applicationConfig;
@@ -27,7 +30,7 @@ public class MoviesApplicationTests {
 		given()
 		.accept(ContentType.JSON)
 		.when()
-		.get(URL)
+		.get(String.format(URL, port))
 		.then()
 		.statusCode(200);
 	}
