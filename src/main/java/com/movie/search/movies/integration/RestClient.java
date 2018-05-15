@@ -8,7 +8,7 @@ public class RestClient {
 	
 	public Object call(String url, Class clazz, String...queryParameters) {
 		RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(url, clazz, queryParameters);
+		return restTemplate.getForObject(url, clazz, queryParameters);
 	}
 
 }
