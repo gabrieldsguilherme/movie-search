@@ -11,10 +11,19 @@ public class ApplicationConfig {
 	}
 	
 	@Value("${integration.openweathermap.base-url}")
-	String openWeatherMapBaseUrl;
+	private String openWeatherMapBaseUrl;
 	
 	@Value("${integration.openweathermap.api-key}")
-	String openWeatherMapApiKey;
+	private String openWeatherMapApiKey;
+	
+	@Value("${integration.themoviedb.base-url}")
+	private String theMovieDBBaseUrl;
+	
+	@Value("${integration.themoviedb.api-key}")
+	private String theMovieDBApiKey;
+	
+	@Value("${integration.themoviedb.language}")
+	private String theMovieDBLanguage;
 	
 	public String getOpenWeatherMapBaseUrl() {
 		return openWeatherMapBaseUrl;
@@ -22,6 +31,18 @@ public class ApplicationConfig {
 	
 	public String getOpenWeatherMapApiKey() {
 		return openWeatherMapApiKey;
+	}
+
+	public String getTheMovieDBBaseUrl() {
+		return theMovieDBBaseUrl;
+	}
+
+	public String getTheMovieDBApiKey() {
+		return theMovieDBApiKey;
+	}
+
+	public String getTheMovieDBLanguage() {
+		return theMovieDBLanguage;
 	}
 
 }

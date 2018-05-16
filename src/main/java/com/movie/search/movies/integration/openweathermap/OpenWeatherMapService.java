@@ -1,4 +1,4 @@
-package com.movie.search.movies.integration;
+package com.movie.search.movies.integration.openweathermap;
 
 import com.movie.search.movies.to.WeatherResponse;
 

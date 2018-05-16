@@ -1,15 +1,17 @@
 package com.movie.search.movies.to;
 
+import java.util.List;
+
 public class MovieResponse {
 	
-	private String name;
+	private List<Result> results;
 
-	public String getName() {
-		return name;
+	public List<Result> getResults() {
+		return results;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setResults(List<Result> results) {
+		this.results = results;
 	}
 
 }

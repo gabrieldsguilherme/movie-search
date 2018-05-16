@@ -1,8 +1,10 @@
-package com.movie.search.movies.integration;
+package com.movie.search.movies.integration.openweathermap;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.movie.search.movies.integration.RestClient;
 import com.movie.search.movies.service.ApplicationConfig;
 import com.movie.search.movies.to.WeatherResponse;
 
@@ -17,8 +19,12 @@ public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
 	
 	@Override
 	public WeatherResponse searchByCityAndCountry(String city, String country) {
-		String url = applicationConfig.getOpenWeatherMapBaseUrl() + "/weather?q={city},{country}&appid={key}&units=metric";
 		String key = applicationConfig.getOpenWeatherMapApiKey();
+		String url = StringUtils.join(applicationConfig.getOpenWeatherMapBaseUrl(),
+				"/weather",
+				"?q={city},{country}",
+				"&units=metric",
+				"&appid={key}");
 		return restClient.get(url, WeatherResponse.class, city, country, key);
 	}
 
