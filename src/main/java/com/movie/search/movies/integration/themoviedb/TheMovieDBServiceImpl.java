@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.movie.search.movies.integration.RestClient;
+import com.movie.search.movies.integration.themoviedb.to.MovieResponse;
 import com.movie.search.movies.service.ApplicationConfig;
-import com.movie.search.movies.to.MovieResponse;
 
 @Service
 public class TheMovieDBServiceImpl implements TheMovieDBService {

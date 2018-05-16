@@ -3,14 +3,12 @@ package com.movie.search.movies.to;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.movie.search.movies.integration.themoviedb.Genre;
-
 public class MoviesSuggestion {
 	
-	private Genre genre;
+	private String genre;
 	private List<Movie> movies;
 
-	public Genre getGenre() {
+	public String getGenre() {
 		return genre;
 	}
 
@@ -30,7 +28,7 @@ public class MoviesSuggestion {
 			return moviesSuggestion;
 		}
 		
-		public Builder withGenre(Genre genre) {
+		public Builder withGenre(String genre) {
 			moviesSuggestion.genre = genre;
 			return this;
 		}

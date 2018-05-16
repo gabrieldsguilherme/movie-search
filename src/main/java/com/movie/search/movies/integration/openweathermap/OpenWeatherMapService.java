@@ -1,6 +1,6 @@
 package com.movie.search.movies.integration.openweathermap;
 
-import com.movie.search.movies.to.WeatherResponse;
+import com.movie.search.movies.integration.openweathermap.to.WeatherResponse;
 
 public interface OpenWeatherMapService {
 	

@@ -1,6 +1,6 @@
 package com.movie.search.movies.integration.themoviedb;
 
-import com.movie.search.movies.to.MovieResponse;
+import com.movie.search.movies.integration.themoviedb.to.MovieResponse;
 
 public interface TheMovieDBService {
 

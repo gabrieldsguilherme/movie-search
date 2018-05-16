@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.movie.search.movies.factory.MovieGenresFactory;
 import com.movie.search.movies.integration.openweathermap.OpenWeatherMapService;
+import com.movie.search.movies.integration.openweathermap.to.WeatherResponse;
 import com.movie.search.movies.integration.themoviedb.Genre;
 import com.movie.search.movies.integration.themoviedb.TheMovieDBService;
+import com.movie.search.movies.integration.themoviedb.to.MovieResponse;
+import com.movie.search.movies.integration.themoviedb.to.Result;
 import com.movie.search.movies.to.Movie;
-import com.movie.search.movies.to.MovieResponse;
 import com.movie.search.movies.to.MoviesSuggestion;
 import com.movie.search.movies.to.MoviesSuggestion.Builder;
-import com.movie.search.movies.to.Result;
-import com.movie.search.movies.to.WeatherResponse;
 
 @Service
 public class MovieServiceImpl implements MovieService {
@@ -44,7 +44,7 @@ public class MovieServiceImpl implements MovieService {
 		List<Result> movies = movie.getResults();
 		
 		Builder moviesSuggestionBuilder = new MoviesSuggestion.Builder()
-			.withGenre(genre);
+			.withGenre(genre.name());
 		
 		movies.forEach(m -> {
 			moviesSuggestionBuilder.addMovie(

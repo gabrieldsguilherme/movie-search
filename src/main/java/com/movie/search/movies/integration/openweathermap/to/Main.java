@@ -1,4 +1,4 @@
-package com.movie.search.movies.to;
+package com.movie.search.movies.integration.openweathermap.to;
 
 public class Main {
 	

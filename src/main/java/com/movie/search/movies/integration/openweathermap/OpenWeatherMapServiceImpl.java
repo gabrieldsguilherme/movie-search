@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.movie.search.movies.integration.RestClient;
+import com.movie.search.movies.integration.openweathermap.to.WeatherResponse;
 import com.movie.search.movies.service.ApplicationConfig;
-import com.movie.search.movies.to.WeatherResponse;
 
 @Service
 public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
