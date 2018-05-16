@@ -1,12 +1,12 @@
-package com.movie.search.movies.integration.openweathermap;
+package com.movie.search.integration.openweathermap;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.movie.search.movies.integration.RestClient;
-import com.movie.search.movies.integration.openweathermap.to.WeatherResponse;
-import com.movie.search.movies.service.ApplicationConfig;
+import com.movie.search.integration.RestClient;
+import com.movie.search.integration.openweathermap.to.WeatherResponse;
+import com.movie.search.service.ApplicationConfig;
 
 @Service
 public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {

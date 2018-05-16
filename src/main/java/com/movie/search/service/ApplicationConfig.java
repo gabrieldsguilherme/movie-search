@@ -1,4 +1,4 @@
-package com.movie.search.movies.service;
+package com.movie.search.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

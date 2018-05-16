@@ -1,4 +1,4 @@
-package com.movie.search.movies.integration.themoviedb.to;
+package com.movie.search.integration.themoviedb.to;
 
 public class Result {
 	

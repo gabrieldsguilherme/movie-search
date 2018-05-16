@@ -1,4 +1,4 @@
-package com.movie.search.movies.integration.themoviedb;
+package com.movie.search.integration.themoviedb;
 
 public enum Genre {
 	

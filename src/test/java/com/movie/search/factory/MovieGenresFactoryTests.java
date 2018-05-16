@@ -1,9 +1,10 @@
-package com.movie.search.movies.factory;
+package com.movie.search.factory;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
-import com.movie.search.movies.integration.themoviedb.Genre;
+import com.movie.search.integration.themoviedb.Genre;
 
 public class MovieGenresFactoryTests {
 	

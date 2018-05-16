@@ -1,6 +1,6 @@
-package com.movie.search.movies.service;
+package com.movie.search.service;
 
-import com.movie.search.movies.to.MoviesSuggestion;
+import com.movie.search.to.MoviesSuggestion;
 
 public interface MovieService {
 	

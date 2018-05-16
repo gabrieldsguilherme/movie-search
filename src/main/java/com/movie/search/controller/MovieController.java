@@ -1,4 +1,4 @@
-package com.movie.search.movies.controller;
+package com.movie.search.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.movie.search.movies.service.MovieService;
-import com.movie.search.movies.to.MoviesSuggestion;
+import com.movie.search.service.MovieService;
+import com.movie.search.to.MoviesSuggestion;
 
 @RestController
 public class MovieController {

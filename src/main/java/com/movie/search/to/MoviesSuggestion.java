@@ -1,4 +1,4 @@
-package com.movie.search.movies.to;
+package com.movie.search.to;
 
 import java.util.ArrayList;
 import java.util.List;

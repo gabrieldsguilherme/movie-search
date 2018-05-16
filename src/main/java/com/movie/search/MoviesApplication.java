@@ -1,4 +1,4 @@
-package com.movie.search.movies;
+package com.movie.search;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

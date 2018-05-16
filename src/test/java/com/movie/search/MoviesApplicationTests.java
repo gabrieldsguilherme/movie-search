@@ -1,4 +1,4 @@
-package com.movie.search.movies;
+package com.movie.search;
 
 import static com.jayway.restassured.RestAssured.given;
 
@@ -11,7 +11,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.jayway.restassured.http.ContentType;
-import com.movie.search.movies.service.ApplicationConfig;
+import com.movie.search.service.ApplicationConfig;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)

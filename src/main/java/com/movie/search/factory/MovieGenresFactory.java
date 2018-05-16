@@ -1,10 +1,10 @@
-package com.movie.search.movies.factory;
+package com.movie.search.factory;
 
 import java.util.stream.Stream;
 
 import org.springframework.stereotype.Component;
 
-import com.movie.search.movies.integration.themoviedb.Genre;
+import com.movie.search.integration.themoviedb.Genre;
 
 @Component
 public class MovieGenresFactory {

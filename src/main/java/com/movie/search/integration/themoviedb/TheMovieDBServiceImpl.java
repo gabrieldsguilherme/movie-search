@@ -1,4 +1,4 @@
-package com.movie.search.movies.integration.themoviedb;
+package com.movie.search.integration.themoviedb;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -7,9 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.movie.search.movies.integration.RestClient;
-import com.movie.search.movies.integration.themoviedb.to.MovieResponse;
-import com.movie.search.movies.service.ApplicationConfig;
+import com.movie.search.integration.RestClient;
+import com.movie.search.integration.themoviedb.to.MovieResponse;
+import com.movie.search.service.ApplicationConfig;
 
 @Service
 public class TheMovieDBServiceImpl implements TheMovieDBService {

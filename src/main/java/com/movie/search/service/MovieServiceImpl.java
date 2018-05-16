@@ -1,20 +1,20 @@
-package com.movie.search.movies.service;
+package com.movie.search.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.movie.search.movies.factory.MovieGenresFactory;
-import com.movie.search.movies.integration.openweathermap.OpenWeatherMapService;
-import com.movie.search.movies.integration.openweathermap.to.WeatherResponse;
-import com.movie.search.movies.integration.themoviedb.Genre;
-import com.movie.search.movies.integration.themoviedb.TheMovieDBService;
-import com.movie.search.movies.integration.themoviedb.to.MovieResponse;
-import com.movie.search.movies.integration.themoviedb.to.Result;
-import com.movie.search.movies.to.Movie;
-import com.movie.search.movies.to.MoviesSuggestion;
-import com.movie.search.movies.to.MoviesSuggestion.Builder;
+import com.movie.search.factory.MovieGenresFactory;
+import com.movie.search.integration.openweathermap.OpenWeatherMapService;
+import com.movie.search.integration.openweathermap.to.WeatherResponse;
+import com.movie.search.integration.themoviedb.Genre;
+import com.movie.search.integration.themoviedb.TheMovieDBService;
+import com.movie.search.integration.themoviedb.to.MovieResponse;
+import com.movie.search.integration.themoviedb.to.Result;
+import com.movie.search.to.Movie;
+import com.movie.search.to.MoviesSuggestion;
+import com.movie.search.to.MoviesSuggestion.Builder;
 
 @Service
 public class MovieServiceImpl implements MovieService {

@@ -1,4 +1,4 @@
-package com.movie.search.movies.integration.openweathermap.to;
+package com.movie.search.integration.openweathermap.to;
 
 public class WeatherResponse {
 	

@@ -1,4 +1,4 @@
-package com.movie.search.movies.to;
+package com.movie.search.to;
 
 
 public class Movie {

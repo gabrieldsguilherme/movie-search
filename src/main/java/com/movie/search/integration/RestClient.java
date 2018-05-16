@@ -1,4 +1,4 @@
-package com.movie.search.movies.integration;
+package com.movie.search.integration;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
