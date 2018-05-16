@@ -1,2 +1,2 @@
 # movie-search
-Application that returns new movies based on temperature of the place informed.
+Application that returns movies in theatres based on temperature of the city informed.
