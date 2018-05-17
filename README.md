@@ -24,3 +24,10 @@ Get movie suggestions in theatres based on local temperature.
 - 20 >= Temperature <= 35: Animation Movies
 - 0 >= Temperature <= 19: Mystery Movies
 - Temperature < 0: Documentary Movies
+
+# TODO
+- Add more tests using RestAssured
+- Insert/configure logs
+- Tests mocking integration services to explore responses
+- Modularize integrations
+- Return custom objects describing the error
