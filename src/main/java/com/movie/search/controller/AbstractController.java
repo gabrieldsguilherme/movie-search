@@ -13,7 +13,7 @@ import com.movie.search.integration.exception.InvalidKeyException;
 
 public abstract class AbstractController {
 
-	@ExceptionHandler(value = { InvalidKeyException.class, InvalidCityOrCountryException.class })
+	@ExceptionHandler(value = InvalidCityOrCountryException.class)
 	protected void handleBadRequest(HttpServletResponse response) throws IOException {
 	    response.sendError(HttpStatus.BAD_REQUEST.value());
 	}
@@ -21,6 +21,11 @@ public abstract class AbstractController {
 	@ExceptionHandler(value = HttpStatusCodeException.class)
 	protected void handleInternalServerError(HttpServletResponse response) throws IOException {
 		response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value());
+	}
+	
+	@ExceptionHandler(value = InvalidKeyException.class)
+	protected void handleUnauthorized(HttpServletResponse response) throws IOException {
+		response.sendError(HttpStatus.UNAUTHORIZED.value());
 	}
 	
 }
