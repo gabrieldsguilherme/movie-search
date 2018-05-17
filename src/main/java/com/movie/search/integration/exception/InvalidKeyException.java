@@ -4,8 +4,8 @@ public class InvalidKeyException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 	
-	public InvalidKeyException() {
-		super("Invalid api key");
+	public InvalidKeyException(String integration) {
+		super("Invalid api key for " + integration);
 	}
 
 }

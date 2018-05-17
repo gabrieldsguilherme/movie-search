@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
+import com.movie.search.integration.IntegrationService;
 import com.movie.search.integration.RestClient;
 import com.movie.search.integration.exception.InvalidCityOrCountryException;
 import com.movie.search.integration.exception.InvalidKeyException;
@@ -13,8 +14,10 @@ import com.movie.search.integration.openweathermap.to.WeatherResponse;
 import com.movie.search.service.ApplicationConfig;
 
 @Service
-public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
+public class OpenWeatherMapServiceImpl implements OpenWeatherMapService, IntegrationService {
 	
+	private static final String INTEGRATION_NAME = "OpenWeatherMap";
+
 	@Autowired
 	private RestClient restClient;
 	
@@ -33,12 +36,17 @@ public class OpenWeatherMapServiceImpl implements OpenWeatherMapService {
 			return restClient.get(url, WeatherResponse.class, city, country, key);
 		} catch (HttpClientErrorException e) {
 			if (HttpStatus.UNAUTHORIZED == e.getStatusCode()) {
-				throw new InvalidKeyException();
+				throw new InvalidKeyException(getIntegrationName());
 			} else if (HttpStatus.NOT_FOUND == e.getStatusCode()) {
 				throw new InvalidCityOrCountryException();
 			}
 			throw e;
 		}
+	}
+	
+	@Override
+	public String getIntegrationName() {
+		return INTEGRATION_NAME;
 	}
 
 }

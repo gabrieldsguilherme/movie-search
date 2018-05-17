@@ -9,14 +9,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
+import com.movie.search.integration.IntegrationService;
 import com.movie.search.integration.RestClient;
 import com.movie.search.integration.exception.InvalidKeyException;
 import com.movie.search.integration.themoviedb.to.MovieResponse;
 import com.movie.search.service.ApplicationConfig;
 
 @Service
-public class TheMovieDBServiceImpl implements TheMovieDBService {
+public class TheMovieDBServiceImpl implements TheMovieDBService, IntegrationService {
 	
+	private static final String INTEGRATION_NAME = "The Movie DB";
+
 	@Autowired
 	private RestClient restClient;
 	
@@ -40,15 +43,20 @@ public class TheMovieDBServiceImpl implements TheMovieDBService {
 			return restClient.get(url, MovieResponse.class, startDate, endDate, genre.getId(), language, key);
 		} catch (HttpClientErrorException e) {
 			if (HttpStatus.UNAUTHORIZED == e.getStatusCode()) {
-				throw new InvalidKeyException();
+				throw new InvalidKeyException(getIntegrationName());
 			}
 			throw e;
 		}
+	}
+	
+	@Override
+	public String getIntegrationName() {
+		return INTEGRATION_NAME;
 	}
 	
 	private String getDate(LocalDate date) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		return date.format(formatter);
 	}
-
+	
 }
