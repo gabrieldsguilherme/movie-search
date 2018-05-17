@@ -3,10 +3,12 @@ Spring Boot Application that returns movies in theatres based on temperature of 
 
 # Api Documentation
 GET /api/movie?city={city}&country={country}
-- {city}: City name
-- {country}: Country code
+- {city}: City name (required)
+- {country}: Country code (required)
 
 > Example: /api/movie?city=Campinas&country=BR
+
+Note: The pattern used to validate cities and countries is OpenWeatherMap responsibility. For more information, read the documentation.
 
 # Requirements
 - Java 8+
