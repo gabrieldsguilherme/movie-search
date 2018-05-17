@@ -1,5 +1,5 @@
 # movie-search
-Application that returns movies in theatres based on temperature of the city informed.
+Spring Boot Application that returns movies in theatres based on temperature of the city informed.
 
 # Api Documentation
 GET /api/movie?city={city}&country={country}
@@ -10,6 +10,9 @@ GET /api/movie?city={city}&country={country}
 
 # Requirements
 - Java 8+
+- Properties Configuration
+  - Deploy: https://github.com/gabrieldsguilherme/movie-search/blob/master/src/main/resources/application.properties
+  - Local Tests: https://github.com/gabrieldsguilherme/movie-search/blob/master/src/test/resources/application.properties
 
 # API Goal
 Get movie suggestions in theatres based on local temperature.
