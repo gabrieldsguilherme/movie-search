@@ -1,2 +1,21 @@
 # movie-search
 Application that returns movies in theatres based on temperature of the city informed.
+
+# Api Documentation
+GET /api/movie?city={city}&country={country}
+- {city}: City name
+- {country}: Country code
+
+. Example: /api/movie?city=Campinas&country=BR
+
+# Requirements
+- Java 8+
+
+# API Goal
+Get movie suggestions in theatres based on local temperature.
+
+- Temperature > 40: Action Movies
+- 36 >= Temperature <= 40: Comedy Movies
+- 20 >= Temperature <= 35: Animation Movies
+- 0 >= Temperature <= 19: Mystery Movies
+- Temperature < 0: Documentary Movies
