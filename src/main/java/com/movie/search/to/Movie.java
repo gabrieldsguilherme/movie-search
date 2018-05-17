@@ -1,11 +1,16 @@
 package com.movie.search.to;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class Movie {
 	
 	private String title;
 	private String overview;
-	private String releaseDate;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate releaseDate;
 	
 	public String getTitle() {
 		return title;
@@ -15,7 +20,7 @@ public class Movie {
 		return overview;
 	}
 
-	public String getReleaseDate() {
+	public LocalDate getReleaseDate() {
 		return releaseDate;
 	}
 	
@@ -40,7 +45,7 @@ public class Movie {
 			return this;
 		}
 		
-		public Builder withReleaseDate(String releaseDate) {
+		public Builder withReleaseDate(LocalDate releaseDate) {
 			movie.releaseDate = releaseDate;
 			return this;
 		}

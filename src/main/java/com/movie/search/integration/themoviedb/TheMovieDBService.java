@@ -4,6 +4,6 @@ import com.movie.search.integration.themoviedb.to.MovieResponse;
 
 public interface TheMovieDBService {
 
-	MovieResponse searchByGenre(Genre genre);
+	MovieResponse searchByGenre(Genre genre) throws Exception;
 
 }

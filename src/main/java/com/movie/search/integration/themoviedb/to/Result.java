@@ -1,10 +1,17 @@
 package com.movie.search.integration.themoviedb.to;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Result {
 	
 	private String title;
 	private String overview;
-	private String releaseDate;
+	@JsonProperty(value = "release_date")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate releaseDate;
 	
 	public String getTitle() {
 		return title;
@@ -22,11 +29,11 @@ public class Result {
 		this.overview = overview;
 	}
 
-	public String getReleaseDate() {
+	public LocalDate getReleaseDate() {
 		return releaseDate;
 	}
 
-	public void setReleaseDate(String releaseDate) {
+	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 

@@ -29,7 +29,7 @@ public class MovieServiceImpl implements MovieService {
 	private MovieGenresFactory movieGenresFactory;
 	
 	@Override
-	public MoviesSuggestion searchMovies(String city, String country) {
+	public MoviesSuggestion searchMovies(String city, String country) throws Exception {
 		WeatherResponse weather = openWeatherMapService.searchByCityAndCountry(city, country);
 		Long temperature = weather.getMain().getTemp();
 		
@@ -37,14 +37,16 @@ public class MovieServiceImpl implements MovieService {
 		
 		MovieResponse movie = theMovieDBService.searchByGenre(genre);
 		
-		return buildMovieSuggestion(genre, movie);
+		return buildMovieSuggestion(genre, movie, weather);
 	}
 
-	private MoviesSuggestion buildMovieSuggestion(Genre genre, MovieResponse movie) {
+	private MoviesSuggestion buildMovieSuggestion(Genre genre, MovieResponse movie, WeatherResponse weather) {
 		List<Result> movies = movie.getResults();
 		
 		Builder moviesSuggestionBuilder = new MoviesSuggestion.Builder()
-			.withGenre(genre.name());
+			.withGenre(genre.name())
+			.withCity(weather.getName())
+			.withTemperature(weather.getMain().getTemp());
 		
 		movies.forEach(m -> {
 			moviesSuggestionBuilder.addMovie(

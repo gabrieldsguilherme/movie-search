@@ -4,6 +4,6 @@ import com.movie.search.integration.openweathermap.to.WeatherResponse;
 
 public interface OpenWeatherMapService {
 	
-	public WeatherResponse searchByCityAndCountry(String city, String country);
+	public WeatherResponse searchByCityAndCountry(String city, String country) throws Exception;
 
 }

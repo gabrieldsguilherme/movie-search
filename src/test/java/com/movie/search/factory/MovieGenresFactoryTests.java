@@ -38,8 +38,7 @@ public class MovieGenresFactoryTests {
 		assertFalse(Genre.Mystery.isCompatibleWithTemperature(-1L));
 		assertTrue(Genre.Mystery.isCompatibleWithTemperature(0L));
 		assertTrue(Genre.Mystery.isCompatibleWithTemperature(19L));
-		assertTrue(Genre.Mystery.isCompatibleWithTemperature(20L));
-		assertFalse(Genre.Mystery.isCompatibleWithTemperature(21L));
+		assertFalse(Genre.Mystery.isCompatibleWithTemperature(20L));
 	}
 	
 	@Test

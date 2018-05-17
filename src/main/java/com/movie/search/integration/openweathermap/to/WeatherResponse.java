@@ -3,6 +3,7 @@ package com.movie.search.integration.openweathermap.to;
 public class WeatherResponse {
 	
 	private Main main;
+	private String name;
 
 	public Main getMain() {
 		return main;
@@ -10,6 +11,14 @@ public class WeatherResponse {
 
 	public void setMain(Main main) {
 		this.main = main;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

@@ -5,6 +5,8 @@ import java.util.List;
 
 public class MoviesSuggestion {
 	
+	private String city;
+	private Long temperature;
 	private String genre;
 	private List<Movie> movies;
 
@@ -14,6 +16,14 @@ public class MoviesSuggestion {
 
 	public List<Movie> getMovies() {
 		return movies;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public Long getTemperature() {
+		return temperature;
 	}
 	
 	public static class Builder {
@@ -35,6 +45,16 @@ public class MoviesSuggestion {
 		
 		public Builder addMovie(Movie movie) {
 			moviesSuggestion.movies.add(movie);
+			return this;
+		}
+		
+		public Builder withCity(String city) {
+			moviesSuggestion.city = city;
+			return this;
+		}
+		
+		public Builder withTemperature(Long temperature) {
+			moviesSuggestion.temperature = temperature;
 			return this;
 		}
  	}

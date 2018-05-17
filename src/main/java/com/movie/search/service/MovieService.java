@@ -4,6 +4,6 @@ import com.movie.search.to.MoviesSuggestion;
 
 public interface MovieService {
 	
-	public MoviesSuggestion searchMovies(String city, String country);
+	public MoviesSuggestion searchMovies(String city, String country) throws Exception;
 
 }

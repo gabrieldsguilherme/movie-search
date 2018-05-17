@@ -34,5 +34,15 @@ public class MoviesApplicationTests {
 		.then()
 		.statusCode(200);
 	}
+	
+	@Test
+	public void testInvalidCityOrCountry() {
+		given()
+		.accept(ContentType.JSON)
+		.when()
+		.get(String.format(URL + "invalidcountry", port))
+		.then()
+		.statusCode(400);
+	}
 
 }

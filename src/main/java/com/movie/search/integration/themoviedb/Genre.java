@@ -23,7 +23,7 @@ public enum Genre {
 	Mystery(9648) {
 		@Override
 		public Boolean isCompatibleWithTemperature(Long temperature) {
-			return temperature.compareTo(0L) >= 0 && temperature.compareTo(20L) <= 0;
+			return temperature.compareTo(0L) >= 0 && temperature.compareTo(19L) <= 0;
 		}
 	},
 	Documentary(99) {
