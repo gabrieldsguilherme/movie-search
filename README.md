@@ -10,6 +10,8 @@ GET /api/movie?city={city}&country={country}
 
 # Requirements
 - Java 8+
+- Account on OpenWeatherMap (https://openweathermap.org/) to generate api key
+- Account on The Movie DB (https://www.themoviedb.org/) to generate api key
 - Properties Configuration
   - Deploy: https://github.com/gabrieldsguilherme/movie-search/blob/master/src/main/resources/application.properties
   - Local Tests: https://github.com/gabrieldsguilherme/movie-search/blob/master/src/test/resources/application.properties
