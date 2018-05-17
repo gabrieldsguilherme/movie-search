@@ -6,7 +6,7 @@ GET /api/movie?city={city}&country={country}
 - {city}: City name
 - {country}: Country code
 
-. Example: /api/movie?city=Campinas&country=BR
+> Example: /api/movie?city=Campinas&country=BR
 
 # Requirements
 - Java 8+
